@@ -1,0 +1,29 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list">
+      <div class="item item-input-inset">
+        <form ng-submit="findContact(searchText)">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Search" ng-model="searchText">
+          </label>
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <div class="item-divider"></div>
+      <div class="item item-body">
+        <ion-list>
+          <ion-item ng-repeat="contact in contacts">
+          <div class="item item-thumbnail-left item-button-right">
+            <img ng-src="{{contact.image}}">
+            <h2>{{contact.displayName}}</h2>
+            <p>{{contact.email}}</p>
+            <button class="button button-positive" ng-click="addContact(contact)">
+              <i class="icon ion-ios-plus"></i>
+            </button>
+          </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
